@@ -55,13 +55,8 @@ func (c *Collection) Contains(m Migration) bool {
 func (c *Collection) SliceFrom(migrationId string) *Collection {
 	subCollection := NewCollection()
 
-	appendable := false
 	for _, mc := range c.migrations {
 		if mc.ID == migrationId {
-			appendable = true
-			continue
-		}
-		if !appendable {
 			continue
 		}
 
